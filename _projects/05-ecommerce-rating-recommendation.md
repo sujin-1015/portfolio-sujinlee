@@ -10,12 +10,12 @@ skills: ["Python", "웹크롤링", "추천시스템", "예측"]
 
 ## Step1. 데이터 수집
 
-올리브영 스킨케어 제품의 다양한 정보를 크롤링했습니다.
+올리브영 스킨케어 제품의 다양한 정보를 크롤링
 
-- **제품 정보**: 브랜드명, 상품명, 카테고리, 정가, 할인가
-- **고객 및 리뷰 정보**: 아이디, 별점, 피부타입, 피부고민 등
+- 제품 정보: 브랜드명, 상품명, 카테고리, 정가, 할인가
+- 고객 및 리뷰 정보: 아이디, 별점, 피부타입, 피부고민 등
 
-selenium, ChromeDriverManager, requests, BeautifulSoup, openpyxl 등을 활용했습니다.
+selenium, ChromeDriverManager, requests, BeautifulSoup, openpyxl 등 활용
 
 <figure>
   <img src="{{ '/assets/images/projects/05-ecommerce/img-01.png' | relative_url }}" alt="크롤링한 올리브영 스킨케어 제품 및 리뷰 데이터 샘플 표">
@@ -24,17 +24,18 @@ selenium, ChromeDriverManager, requests, BeautifulSoup, openpyxl 등을 활용�
 
 ## Step2. 상품 별점 예측
 
-Random Forest 및 KNN(K-Nearest Neighbor) 모델을 사용했고, SMOTE 오버샘플링, StandardScaler, Grid Search 등을 활용했습니다.
+Random Forest 및 KNN(K-Nearest Neighbor) 모델 사용
 
-- 데이터 불균형 확인 → SMOTE 오버샘플링 수행
+SMOTE 오버샘플링, StandardScaler, Grid Search 등 활용
+
+데이터 불균형 확인 → SMOTE 오버샘플링 수행
 
 <figure class="figure--sm">
   <img src="{{ '/assets/images/projects/05-ecommerce/img-02.png' | relative_url }}" alt="별점별 리뷰 수 분포 — 5점에 편중된 데이터 불균형">
   <figcaption>별점 분포 (데이터 불균형 확인)</figcaption>
 </figure>
 
-- [랜덤포레스트] 피처 중요도 시각화
-- [랜덤포레스트] 혼동행렬 시각화
+[랜덤포레스트] 피처 중요도 시각화 / 혼동행렬 시각화
 
 <div class="fig-row">
   <figure>
@@ -49,7 +50,7 @@ Random Forest 및 KNN(K-Nearest Neighbor) 모델을 사용했고, SMOTE 오버�
 
 ## Step3. 추천시스템 구현
 
-고객-제품 평점 행렬을 생성하고, 고객 간 유사도를 `cosine_similarity`로 분석했습니다.
+고객-제품 평점 행렬 생성, 고객 간 유사도 분석 (cosine_similarity 활용)
 
 ```python
 # 고객 간 유사도 계산
@@ -64,7 +65,9 @@ df_users_cosine = pd.DataFrame(cos_matrix, index=df_users.index, columns=df_user
   <figcaption>고객 간 코사인 유사도 행렬</figcaption>
 </figure>
 
-제품 및 별점 데이터를 기반으로 User-Based CF 추천시스템을 구현했습니다. 고객 아이디와 원하는 제품 유형을 입력하면, 해당 유저와 유사도가 높은 고객이 만족한 제품을 추천합니다.
+제품 및 별점 데이터를 기반으로 User-Based CF 추천시스템 구현
+
+고객 아이디와 원하는 제품 유형 입력 → 해당 유저와 유사도가 높은 고객의 평점 높은 제품 추천
 
 ```python
 def user_based_recommend(user_id, product_type):
@@ -95,4 +98,4 @@ result = user_based_recommend(user_id=1, product_type='앰플')
   <figcaption>추천 결과 예시 (앰플 제품)</figcaption>
 </figure>
 
-**추천 로직 요약**: 입력 아이디와 유사도 높은 5명 탐색 → 해당 유저들의 데이터 중 원하는 product_type 필터링 → rating 내림차순 정렬 → rating 4점 이상만 → 상품명 중복 제거 → 추천 결과 반환
+로직: 입력 아이디와 유사도 높은 5명 탐색 → 해당 유저들의 데이터 중 원하는 product_type 필터링 → rating 내림차순 정렬 → rating 4점 이상만 → 상품명 중복 제거 → 추천 결과 반환

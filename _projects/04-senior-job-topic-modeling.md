@@ -10,7 +10,9 @@ skills: ["Python", "R", "비정형", "텍스트마이닝", "토픽모델링", "�
 
 ## Step1. 데이터 수집
 
-네이버 뉴스 플랫폼을 활용해 단일 키워드 '노인일자리'로 검색하고, Web Crawling 기법(Selenium, requests, BeautifulSoup 등)을 활용해 기사 링크, 제목, 본문 내용, 기자 이름, 작성일, 언론사 정보를 추출했습니다.
+- 네이버 뉴스 플랫폼 활용 → 단일 키워드로 '노인일자리' 입력하여 검색
+- Web Crawling 기법 활용 (Selenium, requests, BeautifulSoup 등)
+- 기사 링크, 제목, 본문 내용, 기자 이름, 작성일, 언론사 정보 추출
 
 ## Step2. 데이터 전처리
 
@@ -24,9 +26,9 @@ skills: ["Python", "R", "비정형", "텍스트마이닝", "토픽모델링", "�
   <figcaption>LDA 토픽 모델링 절차</figcaption>
 </figure>
 
-LDA(Latent Dirichlet Allocation)를 통해 문서의 단어 사용 패턴을 분석(gensim 활용)해 숨겨진 토픽을 식별하고 토픽별 핵심 키워드를 추출했습니다.
-
-Coherence score(일관성 점수)를 모델 평가 지표로 선정하고 모델 최적화를 진행했습니다. (tuning 대상: num_topics, iterations, passes, eta 등)
+- LDA(Latent Dirichlet Allocation)를 통해 문서의 단어 사용 패턴 분석 (gensim 활용) → 숨겨진 토픽 식별 및 토픽별 핵심 키워드 추출
+- Coherence score(일관성 점수)를 모델 평가 지표로 선정하고 모델 최적화 진행
+- tuning 대상: num_topics, iterations, passes, eta 등
 
 <div class="fig-row">
   <figure>
@@ -50,12 +52,13 @@ Coherence score(일관성 점수)를 모델 평가 지표로 선정하고 모델
 ## Step4. 시각화 | 네트워크 분석, 빈도 분석
 
 - 토픽별로 추출된 키워드와 가중치를 기반으로 네트워크 그래프 구축 (networkx, matplotlib, Kamada-Kawai 등 활용)
-- 빈도 분석 결과를 워드 클라우드로 시각화, 단어들의 TF 및 TF-IDF 값 계산 → 중요도가 높은 상위 단어 추출
 
 <figure>
   <img src="{{ '/assets/images/projects/04-senior-job/img-06.png' | relative_url }}" alt="토픽 9개 키워드 네트워크 그래프">
   <figcaption>토픽 키워드 네트워크 그래프</figcaption>
 </figure>
+
+- 빈도 분석 결과를 워드 클라우드로 시각화, 단어들의 TF 및 TF-IDF 값 계산 → 중요도가 높은 상위 단어 추출
 
 <div class="fig-row">
   <figure>
@@ -70,7 +73,7 @@ Coherence score(일관성 점수)를 모델 평가 지표로 선정하고 모델
 
 ## Step5. 토픽별 내용 분석
 
-LDA 모델을 통해 도출된 각 토픽의 키워드를 가중치 순으로 정리해 각 토픽의 주요 주제와 논점을 파악했습니다.
+LDA 모델을 통해 도출된 각 토픽의 키워드를 가중치 순으로 정리 → 각 토픽의 주요 주제와 논점 파악
 
 | 토픽 | 주제 | 가중치 순 중요 키워드 |
 |---|---|---|
@@ -84,4 +87,7 @@ LDA 모델을 통해 도출된 각 토픽의 키워드를 가중치 순으로 �
 | 8 | 노인 일자리 현장과 수행기관 | 기관, 시니어클럽, 참여자, 공익, 지원사업, 수행 |
 | 9 | 지역 복지 정책으로서 노인 일자리 | 지역, 추진, 복지, 조성, 예산, 계획, 공공, 분야, 구축, 확대 |
 
-키워드 간의 의미적 연관성과 맥락을 종합적으로 고려해 각 토픽의 주제를 해석하고 주제명을 부여했으며, 토픽별 대표 기사를 선정해 내용 분석을 진행했습니다. 이 연구는 한국노인인력개발원 연구조사부와의 공동연구로 이어져 단독 제1저자 논문으로 게재되었습니다.
+- 키워드 간의 의미적 연관성과 맥락을 종합적으로 고려 → 각 토픽의 주제 해석 및 주제 명 부여
+- 토픽별 대표 기사를 선정하여 내용 분석
+
+※ 단독 제1저자 논문 게재로 이어진 연구 (한국노인인력개발원 연구조사부 공동연구)
