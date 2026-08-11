@@ -4,7 +4,7 @@ period: "2026/07/20 → 2026/08/03"
 order: 3
 cover: "/assets/images/projects/10-ai-agent-loan/cover.jpg"
 badge: "2026 Google Cloud & Solana AI Agentic Hackathon 결승 진출"
-field: ["금융", "핀테크", "소상공인대출", "블록체인", "AI"]
+field: ["금융", "핀테크", "소상공인대출", "블록체인", "AI", "기업"]
 skills: ["Python", "AI Agent", "LLM", "RAG", "XGBoost", "FastAPI", "GCP", "Solana"]
 ---
 
