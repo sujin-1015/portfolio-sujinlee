@@ -212,6 +212,7 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 
 <div class="fig-row" markdown="1">
 <div markdown="1">
+
 | 지표 | 결과 |
 |---|---|
 | Test Dataset | 37,800건 |
@@ -221,8 +222,10 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 | 거절 기준 Recall | 35.7% |
 | 거절 기준 Precision | 43.7% |
 | Accuracy | 86.4% |
+
 </div>
 <div markdown="1">
+
 **거절 기준 성능**
 
 <figure>
