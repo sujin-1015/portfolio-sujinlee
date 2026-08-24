@@ -69,19 +69,23 @@ Kaggle 개인 대출 데이터를 소상공인 대출 맥락에 맞게 재해석
 - XGBoost와 LightGBM을 비교한 뒤 Validation AUC가 더 높은 XGBoost를 최종 서빙 모델로 채택
   - Validation AUC
 
-<div class="fig-row" markdown="1">
-<div markdown="1">
-<figure>
-  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-01.png' | relative_url }}" alt="XGBoost와 LightGBM의 Validation AUC 비교 바 차트">
-</figure>
-</div>
-<div markdown="1">
-- XGBoost : 0.7846
-- LightGBM : 0.7794
+    <div class="fig-row" markdown="1">
+    <div markdown="1">
 
-검증 성능을 기준으로, **XGBoost를 최종 서빙 모델로 채택**
-</div>
-</div>
+    <figure class="figure--sm">
+      <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-01.png' | relative_url }}" alt="XGBoost와 LightGBM의 Validation AUC 비교 바 차트">
+    </figure>
+
+    </div>
+    <div markdown="1">
+
+    - XGBoost : 0.7846
+    - LightGBM : 0.7794
+
+    검증 성능을 기준으로, **XGBoost를 최종 서빙 모델로 채택**
+
+    </div>
+    </div>
 
 - 2개의 임계값을 기준으로 신청자를 승인·조건부승인·거절로 분류
 
