@@ -67,19 +67,23 @@ CreditFlow는 소상공인의 정형 데이터와 사업자 설명, 금융기관
 Kaggle 개인 대출 데이터를 소상공인 대출 맥락에 맞게 재해석하고, 18개 피처를 활용해 신청자의 부도확률을 예측했다.
 
 - XGBoost와 LightGBM을 비교한 뒤 Validation AUC가 더 높은 XGBoost를 최종 서빙 모델로 채택
-- 2개의 임계값을 기준으로 신청자를 승인·조건부승인·거절로 분류
+  - Validation AUC
 
-**Validation AUC**
-
+<div class="fig-row" markdown="1">
+<div markdown="1">
+<figure>
+  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-01.png' | relative_url }}" alt="XGBoost와 LightGBM의 Validation AUC 비교 바 차트">
+</figure>
+</div>
+<div markdown="1">
 - XGBoost : 0.7846
 - LightGBM : 0.7794
 
-검증 성능을 기준으로, XGBoost를 최종 서빙 모델로 채택
+검증 성능을 기준으로, **XGBoost를 최종 서빙 모델로 채택**
+</div>
+</div>
 
-<figure class="figure--sm">
-  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-01.png' | relative_url }}" alt="XGBoost와 LightGBM의 Validation AUC 비교 바 차트">
-  <figcaption>모델별 Validation AUC 비교</figcaption>
-</figure>
+- 2개의 임계값을 기준으로 신청자를 승인·조건부승인·거절로 분류
 
 | 등급 | 부도확률 기준 |
 |---|---|
@@ -89,9 +93,9 @@ Kaggle 개인 대출 데이터를 소상공인 대출 맥락에 맞게 재해석
 
 등급이 높아질수록 실제 부도율이 증가하는지 확인해 위험 구분력을 검증
 
-<figure class="figure--sm">
+<figure class="figure--sm2">
   <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-02.png' | relative_url }}" alt="승인/조건부승인/거절 등급별 실제 부도율 — 7.66%, 28.09%, 43.66%">
-  <figcaption>등급별 실제 부도율</figcaption>
+  <figcaption>등급별 실제 부도율(%) 그래프</figcaption>
 </figure>
 
 SHAP TreeExplainer를 적용해 신청자별 예측 요인과 영향 방향을 설명
@@ -206,6 +210,8 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 
 ### 4-1. 모델 성능
 
+<div class="fig-row" markdown="1">
+<div markdown="1">
 | 지표 | 결과 |
 |---|---|
 | Test Dataset | 37,800건 |
@@ -215,11 +221,15 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 | 거절 기준 Recall | 35.7% |
 | 거절 기준 Precision | 43.7% |
 | Accuracy | 86.4% |
+</div>
+<div markdown="1">
+**거절 기준 성능**
 
-<figure class="figure--sm2">
+<figure>
   <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-06.png' | relative_url }}" alt="거절 결정 기준 Confusion Matrix — TN 31,005, FP 2,145, FN 2,988, TP 1,662">
-  <figcaption>Confusion Matrix (거절 결정 기준, test set)</figcaption>
 </figure>
+</div>
+</div>
 
 5-fold 교차검증에서 편차가 0.0010으로 작게 나타나, 특정 데이터 분할에 의존한 우연한 성능이 아님을 확인했다. SHAP을 통해 전체 피처 중요도뿐 아니라 신청자별 예측 근거도 제공했다.
 
@@ -241,10 +251,6 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 - IAM 최소 권한 — 기본 서비스 계정의 Editor 권한을 제거하고 전용 서비스 계정에 필요한 리소스 권한만 부여
 - 데이터 계보 관리 — 원본 CSV부터 전처리·모델·판정·온체인 기록까지 데이터 흐름 문서화
 - 데이터 사전 관리 — 전체 데이터 자산의 필드 정의를 별도 문서로 관리
-
-- ① 트랜잭션 실행 확인 — devnet에서 Finalized 처리됨
-- ② USDC 지급 트랜잭션
-- ③ SPL Memo에 기록된 판정 근거 해시
 
 <div class="fig-row">
   <figure>
