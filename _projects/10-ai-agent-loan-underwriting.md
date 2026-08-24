@@ -89,18 +89,26 @@ Kaggle 개인 대출 데이터를 소상공인 대출 맥락에 맞게 재해석
 
 - 2개의 임계값을 기준으로 신청자를 승인·조건부승인·거절로 분류
 
-  | 등급 | 부도확률 기준 |
-  |---|---|
-  | 승인 | 부도확률 ≤ 58.8% |
-  | 조건부승인 | 58.8% < 부도확률 ≤ 62.6% |
-  | 거절 | 부도확률 > 62.6% |
+<div style="margin-left: 22px;" markdown="1">
+
+| 등급 | 부도확률 기준 |
+|---|---|
+| 승인 | 부도확률 ≤ 58.8% |
+| 조건부승인 | 58.8% < 부도확률 ≤ 62.6% |
+| 거절 | 부도확률 > 62.6% |
+
+</div>
 
 - 등급이 높아질수록 실제 부도율이 증가하는지 확인해 위험 구분력을 검증
 
-  <figure class="figure--sm2">
-    <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-02.png' | relative_url }}" alt="승인/조건부승인/거절 등급별 실제 부도율 — 7.66%, 28.09%, 43.66%">
-    <figcaption>등급별 실제 부도율(%) 그래프</figcaption>
-  </figure>
+<div style="margin-left: 22px;" markdown="1">
+
+<figure class="figure--sm2">
+  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-02.png' | relative_url }}" alt="승인/조건부승인/거절 등급별 실제 부도율 — 7.66%, 28.09%, 43.66%">
+  <figcaption>등급별 실제 부도율(%) 그래프</figcaption>
+</figure>
+
+</div>
 
 - SHAP TreeExplainer를 적용해 신청자별 예측 요인과 영향 방향을 설명
 
