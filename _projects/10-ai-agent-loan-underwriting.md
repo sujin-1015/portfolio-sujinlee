@@ -232,7 +232,7 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 
 **거절 기준 성능**
 
-<figure>
+<figure class="figure--sm">
   <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-06.png' | relative_url }}" alt="거절 결정 기준 Confusion Matrix — TN 31,005, FP 2,145, FN 2,988, TP 1,662">
 </figure>
 </div>
