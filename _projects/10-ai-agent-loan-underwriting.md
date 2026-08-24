@@ -216,17 +216,12 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 | 거절 기준 Precision | 43.7% |
 | Accuracy | 86.4% |
 
-<figure>
+<figure class="figure--sm2">
   <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-06.png' | relative_url }}" alt="거절 결정 기준 Confusion Matrix — TN 31,005, FP 2,145, FN 2,988, TP 1,662">
   <figcaption>Confusion Matrix (거절 결정 기준, test set)</figcaption>
 </figure>
 
 5-fold 교차검증에서 편차가 0.0010으로 작게 나타나, 특정 데이터 분할에 의존한 우연한 성능이 아님을 확인했다. SHAP을 통해 전체 피처 중요도뿐 아니라 신청자별 예측 근거도 제공했다.
-
-<figure>
-  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-07.png' | relative_url }}" alt="XGBoost 18개 피처 중요도 바 차트 — biz_city_risk_te, has_car, biz_premise_ownership_owned 순">
-  <figcaption>Feature Importance — XGBoost (전체 18개 피처)</figcaption>
-</figure>
 
 ### 4-2. 견고성 및 보안 테스트
 
