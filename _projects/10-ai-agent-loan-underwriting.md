@@ -14,6 +14,17 @@ skills: ["Python", "AI Agent", "LLM", "RAG", "XGBoost", "FastAPI", "GCP", "Solan
 - 개인으로 참가 — 기획·데이터분석·모델링·백엔드·인프라·블록체인 연동까지 전 과정을 단독으로 수행
 - 라이브 데모: [CreditFlow Agent — 심사 대시보드](https://creditflow-agent-46585987317.asia-northeast3.run.app/) · [GitHub](https://github.com/sujin-1015/creditflow-ai-agent) (creditflow-ai-agent)
 
+<div class="fig-row">
+  <figure>
+    <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-08-hackathon-presentation.jpg' | relative_url }}" alt="Google for Startups 행사장에서 CreditFlow AI Agent 발표 모습">
+    <figcaption>해커톤 결선 발표</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-09-hackathon-photo.jpg' | relative_url }}" alt="Google Cloud x Solana AI Agentic Hackathon Demo Day 인증 사진">
+    <figcaption>Demo Day 현장</figcaption>
+  </figure>
+</div>
+
 **프로젝트 한눈에 보기**
 
 CreditFlow는 소상공인의 정형 데이터와 사업자 설명, 금융기관의 여신 정책을 함께 분석해 대출 승인 여부를 판단하는 AI Agent 시스템이다. XGBoost가 신청자의 부도확률을 예측하고, Decision Agent가 필요한 도구를 자율적으로 선택해 사업 맥락과 정책을 검토한다. 이후 독립된 Critic Agent가 판정의 규칙 위반과 근거 모순을 재검토한다. 최종 승인 건은 Solana devnet에서 USDC로 즉시 집행하며, 판정 근거의 해시와 트랜잭션을 연결해 사후 검증이 가능하도록 구현했다.
@@ -154,24 +165,12 @@ AI가 금액을 잘못 산정하더라도 실제 자금 이동은 제한되도�
 
 PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고정 소액을 활용해 전체 흐름을 검증했다.
 
-<figure class="figure--wide">
-  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-05.png' | relative_url }}" alt="동기 심사·집행, 이벤트 기반 영수증 생성, 스케줄 재심사 3단계 인프라 구조도">
-  <figcaption>이벤트 기반 인프라 구조</figcaption>
-</figure>
-
-심사 대시보드 - 온체인 증빙 확인 가능 ([creditflow-agent-46585987317.asia-northeast3.run.app](https://creditflow-agent-46585987317.asia-northeast3.run.app/))
-
-<figure class="figure--wide">
-  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-03.png' | relative_url }}" alt="소상공인 대출 사전심사 심사 대시보드 — 총 심사 건수, 승인율, 온체인 집행 건수, 누적 집행액 및 최근 심사 결과 표">
-  <figcaption>심사 대시보드 (Live POC)</figcaption>
-</figure>
-
 ## 3. 시스템 아키텍처
 
 ### 3-1. AI Agent 판정 파이프라인
 
 <figure class="figure--wide">
-  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-04.png' | relative_url }}" alt="정형 데이터 → XGBoost → Decision Agent → Critic Agent → Fund Control → Solana devnet → BigQuery로 이어지는 판정 파이프라인">
+  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-04.jpg' | relative_url }}" alt="Decision Agent → Critic Agent → Cloud Run(FastAPI) → Solana Devnet 정산으로 이어지는 판정·집행 파이프라인, Cloud Scheduler·Secret Manager·Cloud Build·Firestore·BigQuery·Pub/Sub·Eventarc·Workflows 연동 구조">
   <figcaption>AI Agent 판정 파이프라인</figcaption>
 </figure>
 
@@ -240,6 +239,12 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 - IAM 최소 권한 — 기본 서비스 계정의 Editor 권한을 제거하고 전용 서비스 계정에 필요한 리소스 권한만 부여
 - 데이터 계보 관리 — 원본 CSV부터 전처리·모델·판정·온체인 기록까지 데이터 흐름 문서화
 - 데이터 사전 관리 — 전체 데이터 자산의 필드 정의를 별도 문서로 관리
+
+심사 대시보드에서 온체인 증빙을 확인할 수 있다.
+
+- ① 트랜잭션 실행 확인 — devnet에서 Finalized 처리됨
+- ② USDC 지급 트랜잭션
+- ③ SPL Memo에 기록된 판정 근거 해시
 
 ## 5. 기술 스택
 
