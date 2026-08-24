@@ -55,6 +55,13 @@ CreditFlow는 소상공인의 정형 데이터와 사업자 설명, 금융기관
 
 ## 2. 서비스 구현
 
+심사 대시보드
+
+<figure class="figure--wide">
+  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-10-dashboard.jpg' | relative_url }}" alt="소상공인 대출 심사 에이전트 대시보드 — 총 심사 건수, 승인율, 온체인 집행 건수, 누적 집행액(USDC) 및 최근 심사 결과 표">
+  <figcaption>심사 대시보드 (Live PoC)</figcaption>
+</figure>
+
 ### 2-1. XGBoost 기반 정량 심사
 
 Kaggle 개인 대출 데이터를 소상공인 대출 맥락에 맞게 재해석하고, 18개 피처를 활용해 신청자의 부도확률을 예측했다.
@@ -240,11 +247,25 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 - 데이터 계보 관리 — 원본 CSV부터 전처리·모델·판정·온체인 기록까지 데이터 흐름 문서화
 - 데이터 사전 관리 — 전체 데이터 자산의 필드 정의를 별도 문서로 관리
 
-심사 대시보드에서 온체인 증빙을 확인할 수 있다.
-
 - ① 트랜잭션 실행 확인 — devnet에서 Finalized 처리됨
 - ② USDC 지급 트랜잭션
 - ③ SPL Memo에 기록된 판정 근거 해시
+
+<div class="fig-row">
+  <figure>
+    <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-11-tx-confirm.jpg' | relative_url }}" alt="Solana Explorer 트랜잭션 상세 — Status Success, Confirmation Finalized (MAX Confirmations)">
+    <figcaption>① 트랜잭션 실행 확인 (Finalized)</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-12-usdc-payment.jpg' | relative_url }}" alt="Solana Explorer 토큰 잔액 변동 — 재무 지갑에서 신청자 지갑으로 1 USDC 지급">
+    <figcaption>② USDC 지급 트랜잭션</figcaption>
+  </figure>
+</div>
+
+<figure class="figure--wide">
+  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-13-memo-hash.jpg' | relative_url }}" alt="Solana Explorer 로그 — Memo Instruction에 기록된 FundBridge 판정 근거 SHA-256 해시">
+  <figcaption>③ SPL Memo에 기록된 판정 근거 해시</figcaption>
+</figure>
 
 ## 5. 기술 스택
 
