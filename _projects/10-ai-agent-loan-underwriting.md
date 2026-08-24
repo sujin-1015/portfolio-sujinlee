@@ -56,8 +56,6 @@ CreditFlow는 소상공인의 정형 데이터와 사업자 설명, 금융기관
 
 ## 2. 서비스 구현
 
-심사 대시보드
-
 <figure class="figure--wide">
   <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-10-dashboard.jpg' | relative_url }}" alt="소상공인 대출 심사 에이전트 대시보드 — 총 심사 건수, 승인율, 온체인 집행 건수, 누적 집행액(USDC) 및 최근 심사 결과 표">
   <figcaption>심사 대시보드 (Live PoC)</figcaption>
