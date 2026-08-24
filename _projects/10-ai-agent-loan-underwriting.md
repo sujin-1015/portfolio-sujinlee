@@ -12,7 +12,8 @@ skills: ["Python", "AI Agent", "LLM", "RAG", "XGBoost", "FastAPI", "GCP", "Solan
 
 - 2026 Google Cloud & Solana AI Agentic Hackathon 결승 진출 (최종 결승 10개 팀 선정)
 - 개인으로 참가 — 기획·데이터분석·모델링·백엔드·인프라·블록체인 연동까지 전 과정을 단독으로 수행
-- 라이브 데모: [CreditFlow Agent — 심사 대시보드](https://creditflow-agent-46585987317.asia-northeast3.run.app/) · [GitHub](https://github.com/sujin-1015/creditflow-ai-agent) (creditflow-ai-agent)
+- 라이브 데모: [CreditFlow Agent — 심사 대시보드](https://creditflow-agent-46585987317.asia-northeast3.run.app/)
+- GitHub : [GitHub](https://github.com/sujin-1015/creditflow-ai-agent) (creditflow-ai-agent)
 
 <div class="fig-row">
   <figure>
