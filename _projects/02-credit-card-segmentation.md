@@ -4,8 +4,8 @@ period: "2025/03/10 → 2025/04/30"
 order: 3
 cover: "/assets/images/projects/02-credit-card/cover.png"
 badge: "인공지능 경진대회 플랫폼 DACON 2등 수상 (총 236개 팀 참여)"
-field: ["금융", "카드사"]
-skills: ["Python", "고객세분화", "모델링", "분류"]
+field: ["금융", "카드사", "AI"]
+skills: ["Python", "AI", "고객세분화", "모델링", "분류"]
 ---
 
 <figure>
