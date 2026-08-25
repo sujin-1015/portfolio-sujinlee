@@ -1,7 +1,7 @@
 ---
 title: "AI 기반 양방향 수어 대화 및 접근성 가전 제어 서비스"
 period: "2026/05/18 → 2026/06/25"
-order: 1
+order: 2
 cover: "/assets/images/projects/01-sign-language/cover.png"
 badge: "LG전자 DX School 최종 프로젝트 우수상 수상"
 field: ["AI", "접근성", "기업", "고객"]

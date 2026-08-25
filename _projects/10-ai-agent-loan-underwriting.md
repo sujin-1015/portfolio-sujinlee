@@ -1,7 +1,7 @@
 ---
 title: "금융기관을 위한 소상공인 소액대출 심사 및 집행 AI Agent 구현"
 period: "2026/07/20 → 2026/08/21"
-order: 3
+order: 1
 cover: "/assets/images/projects/10-ai-agent-loan/cover.jpg"
 badge: "2026 Google Cloud & Solana AI Agentic Hackathon 결승 진출"
 field: ["금융", "핀테크", "소상공인대출", "블록체인", "AI", "기업"]
@@ -17,12 +17,12 @@ skills: ["Python", "AI Agent", "LLM", "RAG", "XGBoost", "FastAPI", "GCP", "Solan
 
 <div class="fig-row">
   <figure>
-    <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-08-hackathon-presentation.jpg' | relative_url }}" alt="Google for Startups 행사장에서 CreditFlow AI Agent 발표 모습">
-    <figcaption>해커톤 결선 발표</figcaption>
-  </figure>
-  <figure>
     <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-09-hackathon-photo.jpg' | relative_url }}" alt="Google Cloud x Solana AI Agentic Hackathon Demo Day 인증 사진">
     <figcaption>Demo Day 현장</figcaption>
+  </figure>
+  <figure>
+    <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-08-hackathon-presentation.jpg' | relative_url }}" alt="Google for Startups 행사장에서 CreditFlow AI Agent 발표 모습">
+    <figcaption>해커톤 결선 발표</figcaption>
   </figure>
 </div>
 
@@ -61,9 +61,16 @@ CreditFlow는 소상공인의 정형 데이터와 사업자 설명, 금융기관
   <figcaption>심사 대시보드 (Live PoC)</figcaption>
 </figure>
 
+<figure class="figure--wide">
+  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-18-pipeline-7steps.jpg' | relative_url }}" alt="정형 데이터 입력부터 위험 예측, Gemini+RAG 판단, 최종 판정, Critic 교차검증, Solana devnet 집행, BigQuery 기록까지 이어지는 CreditFlow 판정 파이프라인 7단계 다이어그램">
+  <figcaption>CreditFlow 판정 파이프라인 7단계</figcaption>
+</figure>
+
 ### 2-1. XGBoost 기반 정량 심사
 
 Kaggle 개인 대출 데이터를 소상공인 대출 맥락에 맞게 재해석하고, 18개 피처를 활용해 신청자의 부도확률을 예측했다.
+
+※ PoC 단계 검증 결과입니다. (데이터 출처: Kaggle "Loan Prediction Based on Customer Behavior", 사업자 설명 텍스트는 합성 데이터)
 
 - XGBoost와 LightGBM을 비교한 뒤 Validation AUC가 더 높은 XGBoost를 최종 서빙 모델로 채택
   - Validation AUC

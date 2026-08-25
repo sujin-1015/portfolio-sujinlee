@@ -1,7 +1,7 @@
 ---
 title: "신용카드 고객 세그먼트 분류 AI 알고리즘 개발"
 period: "2025/03/10 → 2025/04/30"
-order: 2
+order: 3
 cover: "/assets/images/projects/02-credit-card/cover.png"
 badge: "인공지능 경진대회 플랫폼 DACON 2등 수상 (총 236개 팀 참여)"
 field: ["금융", "카드사"]
