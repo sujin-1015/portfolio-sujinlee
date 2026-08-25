@@ -1,5 +1,5 @@
 ---
-title: "AI 기반 양방향 수어 대화 및 접근성 가전 제어 서비스"
+title: "AI 기반 수어 인식·생성 및 가전 제어를 통한 청각장애인 접근성 서비스 구현"
 period: "2026/05/18 → 2026/06/25"
 order: 2
 cover: "/assets/images/projects/01-sign-language/cover.png"
