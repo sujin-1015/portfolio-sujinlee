@@ -1,6 +1,6 @@
 ---
 title: "금융기관을 위한 소상공인 소액대출 심사 및 집행 AI Agent 구현"
-period: "2026/07/20 → 2026/08/21"
+period: "2026/07/17 → 2026/08/21"
 order: 1
 cover: "/assets/images/projects/10-ai-agent-loan/cover.jpg"
 badge: "2026 Google Cloud & Solana AI Agentic Hackathon 결승 진출"
