@@ -1,7 +1,7 @@
 ---
 title: "이커머스 상품 별점 예측 및 추천시스템 구현"
 period: "2023/06/27 → 2023/08/24"
-order: 6
+order: 7
 cover: "/assets/images/projects/05-ecommerce/cover.png"
 badge: "인공지능 교육 단체 OUTTA AI 부트캠프 - 데이터반 우수상 수상"
 field: ["이커머스", "상품"]
