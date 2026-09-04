@@ -254,10 +254,10 @@ Jammy의 낮은 사용성과 소비자의 적극적 정보 탐색 성향을 종�
 
 고객의 생활 환경과 관심 데이터를 기반으로 제품 탐색부터 구매 의사결정까지 지원하는 AI 서비스
 
-<div class="fig-row" markdown="1">
+<div class="fig-row fig-row--img-sm" markdown="1">
 <div markdown="1">
 
-<figure class="figure--sm" style="max-width:220px">
+<figure class="figure--sm" style="max-width:220px;margin-left:0">
   <img src="{{ '/assets/images/projects/11-lg-jammy-cx-ai-strategy/img-13-ai-assistant-ui.jpg' | relative_url }}" alt="AI 재미피티 제품 비교 챗봇 UI — 사용자 라이프스타일 기반으로 A제품·B제품을 비교해 'A제품이 98% 더 적합' 추천 결과를 보여주는 화면">
   <figcaption>AI 제품 비교 챗봇 UI</figcaption>
 </figure>
@@ -279,10 +279,10 @@ Jammy의 낮은 사용성과 소비자의 적극적 정보 탐색 성향을 종�
 
 ### 4-2. AI 기반 Seamless Information Experience
 
-<div class="fig-row" markdown="1">
+<div class="fig-row fig-row--img-sm" markdown="1">
 <div markdown="1">
 
-<figure class="figure--sm" style="max-width:220px">
+<figure class="figure--sm" style="max-width:220px;margin-left:0">
   <img src="{{ '/assets/images/projects/11-lg-jammy-cx-ai-strategy/img-14-ai-lounge-ui.jpg' | relative_url }}" alt="AI 라이프스타일 라운지 UI — 매칭 태그(30평대 아파트, 아이 있는 집, 고양이 1마리 등) 기반으로 비슷한 라이프스타일의 이웃 사용자 후기를 추천하는 화면">
   <figcaption>AI 라이프스타일 라운지 UI</figcaption>
 </figure>
