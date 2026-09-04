@@ -312,7 +312,7 @@ section{ padding: 72px 0; border-top: 1px solid var(--border); }
 .project-detail__body .fig-row{
   display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; margin: 24px 0;
 }
-.project-detail__body .fig-row figure{ margin:0; }
+.project-detail__body .fig-row figure{ margin:0 0 12px; }
 .project-detail__body .fig-stack{ display:flex; flex-direction:column; gap:16px; }
 .project-detail__body .fig-stack figure{ margin:0; }
 @media (max-width: 640px){ .project-detail__body .fig-row{ grid-template-columns: 1fr; } }

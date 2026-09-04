@@ -39,7 +39,7 @@ Jammy는 LG전자 제품 경험을 공유하고 고객 참여 데이터를 확�
 
 사용자가 방문해야 할 명확한 이유와 지속 참여를 유도하는 경험 설계 필요
 
-<figure class="figure--wide">
+<figure class="figure--sm2">
   <img src="{{ '/assets/images/projects/11-lg-jammy-cx-ai-strategy/img-01-ux-ui-issues.png' | relative_url }}" alt="Jammy UX·UI 문제 스크린샷 모음 — 목적이 불분명한 카테고리 메뉴(테크·스타일·낭만·일상), 종료일 없이 이어지는 이벤트 페이지, '#LGJammy' 해시태그 게시물이 500여 건에 그치는 검색 결과">
   <figcaption>Jammy UX·UI 문제</figcaption>
 </figure>
@@ -257,7 +257,7 @@ Jammy의 낮은 사용성과 소비자의 적극적 정보 탐색 성향을 종�
 <div class="fig-row" markdown="1">
 <div markdown="1">
 
-<figure class="figure--sm">
+<figure class="figure--sm" style="max-width:220px">
   <img src="{{ '/assets/images/projects/11-lg-jammy-cx-ai-strategy/img-13-ai-assistant-ui.jpg' | relative_url }}" alt="AI 재미피티 제품 비교 챗봇 UI — 사용자 라이프스타일 기반으로 A제품·B제품을 비교해 'A제품이 98% 더 적합' 추천 결과를 보여주는 화면">
   <figcaption>AI 제품 비교 챗봇 UI</figcaption>
 </figure>
@@ -282,7 +282,7 @@ Jammy의 낮은 사용성과 소비자의 적극적 정보 탐색 성향을 종�
 <div class="fig-row" markdown="1">
 <div markdown="1">
 
-<figure class="figure--sm">
+<figure class="figure--sm" style="max-width:220px">
   <img src="{{ '/assets/images/projects/11-lg-jammy-cx-ai-strategy/img-14-ai-lounge-ui.jpg' | relative_url }}" alt="AI 라이프스타일 라운지 UI — 매칭 태그(30평대 아파트, 아이 있는 집, 고양이 1마리 등) 기반으로 비슷한 라이프스타일의 이웃 사용자 후기를 추천하는 화면">
   <figcaption>AI 라이프스타일 라운지 UI</figcaption>
 </figure>
