@@ -214,7 +214,7 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 ### 3-1. AI Agent 판정 파이프라인
 
 <figure class="figure--wide">
-  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-04.jpg' | relative_url }}" alt="Decision Agent → Critic Agent → Cloud Run(FastAPI) → Solana Devnet 정산으로 이어지는 판정·집행 파이프라인, Cloud Scheduler·Secret Manager·Cloud Build·Firestore·BigQuery·Pub/Sub·Eventarc·Workflows 연동 구조">
+  <img src="{{ '/assets/images/projects/10-ai-agent-loan/img-04.jpg' | relative_url }}" alt="Decision Agent → Critic Agent → Cloud Run(FastAPI) → Solana Devnet 정산으로 이어지는 판정·집행 파이프라인, Cloud Scheduler·Secret Manager·Cloud Build·Firestore·BigQuery·Pub/Sub·Eventarc·Workflows 연동 구조와, 별도의 모델 학습·검증 파이프라인(train_model.py, drift_check.py, 성능 게이트, model_registry.py) 및 오프라인 품질평가 스크립트(eval_decision_agent.py, llm_model_comparison.py, data_quality_check.py) 구성">
   <figcaption>AI Agent 판정 파이프라인</figcaption>
 </figure>
 
