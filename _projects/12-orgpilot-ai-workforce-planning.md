@@ -10,6 +10,7 @@ skills: ["HR Analytics", "Python", "수요예측", "Claude Code", "Streamlit", "
 조직 생산성 진단부터 업무량 예측, 적정 정원 산정, 스킬 기반 충원 방식 제안까지 연결한 인력계획 분석 도구
 
 - 개인 프로젝트 — 문제 정의·데이터 설계·분석·대시보드·AI 설명 기능까지 전 과정을 단독으로 수행
+- GitHub : [GitHub](https://github.com/sujin-1015/orgpilot-ai) (orgpilot-ai)
 
 ※ 모든 데이터는 가상 IT 서비스 기업 *Aster Digital*(8개 조직, 300명)을 가정해 직접 생성한 **합성 데이터**입니다. 결과 수치는 방법론을 보여 주기 위한 것이며 실제 조직의 성과가 아닙니다.
 
