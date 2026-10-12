@@ -1,7 +1,7 @@
 ---
 title: "업무량 데이터 기반 적정 정원(TO) 산정 및 스킬 기반 인력계획 HR Analytics"
 period: "2026/10/11 → 2026/10/12"
-order: 0
+order: 4
 cover: "/assets/images/projects/12-orgpilot-ai/cover.jpg"
 field: ["HR", "인력계획", "AI", "기업"]
 skills: ["HR Analytics", "Python", "수요예측", "Claude Code", "Streamlit", "Gemini API", "pytest"]

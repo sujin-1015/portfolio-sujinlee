@@ -1,7 +1,7 @@
 ---
 title: "데이터 기반 LG 커뮤니티 CX 혁신 및 AI 서비스 전략 기획"
 period: "2026/02/02 → 2026/02/06"
-order: 5
+order: 6
 cover: "/assets/images/projects/11-lg-jammy-cx-ai-strategy/cover.jpg"
 field: ["AI", "기업", "커뮤니티", "고객", "가전"]
 skills: ["서비스기획", "고객여정분석", "웹크롤링", "TF-IDF", "텍스트마이닝", "시각화", "Python"]
