@@ -73,7 +73,7 @@ Kaggle 개인 대출 데이터를 소상공인 대출 맥락에 맞게 재해석
 
 ※ PoC 단계 검증 결과입니다. (데이터 출처: Kaggle "Loan Prediction Based on Customer Behavior", 사업자 설명 텍스트는 합성 데이터)
 
-- XGBoost와 LightGBM을 비교한 뒤 Validation AUC가 더 높은 XGBoost를 최종 서빙 모델로 채택
+- XGBoost와 LightGBM을 비교한 뒤 Validation AUC가 더 높은 XGBoost를 최종 서빙 모델로 채택 (단순 베이스라인인 로지스틱 회귀와의 비교는 4-1 참고)
   - Validation AUC
 
     <div class="fig-row" markdown="1">
@@ -88,6 +88,7 @@ Kaggle 개인 대출 데이터를 소상공인 대출 맥락에 맞게 재해석
 
     - XGBoost : 0.7846
     - LightGBM : 0.7794
+    - 로지스틱 회귀(베이스라인) : 0.6309
 
     검증 성능을 기준으로, **XGBoost를 최종 서빙 모델로 채택**
 
@@ -272,6 +273,20 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 
 5-fold 교차검증에서 편차가 0.0010으로 작게 나타나, 특정 데이터 분할에 의존한 우연한 성능이 아님을 확인했다. SHAP을 통해 전체 피처 중요도뿐 아니라 신청자별 예측 근거도 제공했다.
 
+**단순 베이스라인(로지스틱 회귀)과의 비교**
+
+트리 부스팅이 정말 필요한지 확인하기 위해, 같은 데이터 분할·피처·시드로 로지스틱 회귀(표준화, 클래스 불균형 보정, 규제 강도만 Validation AUC로 선택)를 학습해 비교했다. XGBoost와 LightGBM은 하이퍼파라미터를 튜닝하지 않았다.
+
+| 모델 | Val AUC | Test AUC | 5-fold CV AUC | 거절 Precision / Recall |
+|---|---|---|---|---|
+| XGBoost (서빙) | 0.7846 | 0.7883 | 0.7848 ± 0.0010 | 43.7% / 35.7% |
+| LightGBM | 0.7794 | 0.7835 | 0.7811 ± 0.0013 | 44.2% / 36.4% |
+| 로지스틱 회귀 | 0.6309 | 0.6286 | 0.6327 ± 0.0039 | 19.9% / 31.8% |
+
+- 로지스틱 회귀와는 Test AUC 차이가 약 0.16(부트스트랩 95% 구간 +0.153~+0.166)으로 커서, 이 데이터에서는 변수 간 비선형·상호작용을 잡는 트리 모델이 필요했다.
+- XGBoost와 LightGBM의 차이는 +0.0048(95% 구간 +0.0025~+0.0068)로 작다. 서빙 모델 선택 근거는 Validation AUC 순위이며, 두 모델의 실질적 성능 차이는 크지 않다.
+- 거절 티어는 세 모델 모두 같은 임계값 탐색 절차로 만들었다.
+
 ### 4-2. Agent 품질 평가와 개선
 
 "데모가 잘 돌아간다"에서 멈추지 않기 위해, **정답(골드)을 평가 실행 전에 확정·커밋**한 케이스로 Decision Agent + Critic Agent 전체 파이프라인을 검증했다. 골드는 여신 정책 문서에서만 도출했고, 결과를 본 뒤에는 바꾸지 않았다. (사업자 설명은 모두 합성 텍스트)
@@ -349,7 +364,7 @@ PoC에서는 실제 원금·이자 스케줄 계산을 제외하고, devnet 고�
 
 | 영역 | 기술 |
 |---|---|
-| ML | XGBoost(서빙) · LightGBM(비교 모델) · scikit-learn |
+| ML | XGBoost(서빙) · LightGBM(비교 모델) · 로지스틱 회귀(베이스라인) · scikit-learn |
 | Explainability | SHAP TreeExplainer |
 | LLM / Agent | Gemini · google-genai · Automatic Function Calling |
 | RAG | Cosine Similarity · gemini-embedding-001 |
