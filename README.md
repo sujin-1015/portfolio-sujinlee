@@ -1,6 +1,6 @@
 # 이수진 포트폴리오
 
-Notion 포트폴리오를 바탕으로 만든 GitHub Pages 사이트입니다. (Jekyll)
+GitHub Pages 사이트입니다. (Jekyll)
 
 ## 로컬에서 보기
 
