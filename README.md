@@ -1,4 +1,4 @@
-# 이수진 포트폴리오
+# 포트폴리오
 
 GitHub Pages 사이트입니다. (Jekyll)
 
